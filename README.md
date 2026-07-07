@@ -1,5 +1,7 @@
 # canvas-quiz
 
+[![CI](https://github.com/mckoss/canvas-quiz/actions/workflows/ci.yml/badge.svg)](https://github.com/mckoss/canvas-quiz/actions/workflows/ci.yml)
+
 Author **Canvas LMS** learning modules in plain **Markdown**, and render them as
 rich, interactive pages inside Canvas — with:
 

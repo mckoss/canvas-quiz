@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/canvas-quiz.js",
   "scripts": {
-    "test": "node --test 'test/**/*.test.js'",
+    "test": "node --test",
     "serve": "node --version >/dev/null && npx --yes serve examples"
   },
   "files": [

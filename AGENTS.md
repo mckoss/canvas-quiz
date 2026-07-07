@@ -55,9 +55,11 @@ files (`canvas-quiz.js`, `canvas-quiz.css`).
 - **Collapse is native `<details>`**, not JS. This is deliberate: accessible,
   keyboard-friendly, and works even if the quiz JS fails to load. Don't replace
   it with a custom toggle.
-- **`node --test test/` fails on this Node build** — it resolves `test/` as a
-  file, not a dir. The `test` script uses the glob `'test/**/*.test.js'`
-  (quoted so the shell doesn't expand it). Keep the quotes.
+- **Test command is plain `node --test`** (default file discovery finds
+  `test/*.test.js`). This is portable across Node 18+. Avoid `node --test test/`
+  (resolves `test/` as a module on some builds) and the `'test/**/*.test.js'`
+  glob (only works on Node 21+). CI runs `npm test` on Node 20.x and 22.x via
+  `.github/workflows/ci.yml`.
 - **Quiz correctness lives in the DOM** as `data-cq-correct="1"` on inputs, and
   grading compares each input's `checked` state to it. When Canvas grading lands
   we may need to hide correct answers from the DOM (server-side check) — noted
