@@ -1,0 +1,28 @@
+{
+  "name": "canvas-quiz",
+  "version": "0.1.0",
+  "description": "Author Canvas LMS modules in Markdown — hierarchical expand/collapse, embeds, glossary, and interleaved quizzes that post to Canvas for grading.",
+  "type": "module",
+  "main": "src/canvas-quiz.js",
+  "scripts": {
+    "test": "node --test 'test/**/*.test.js'",
+    "serve": "node --version >/dev/null && npx --yes serve examples"
+  },
+  "files": [
+    "src/canvas-quiz.js",
+    "src/canvas-quiz.css"
+  ],
+  "keywords": [
+    "canvas",
+    "lms",
+    "markdown",
+    "quiz",
+    "education"
+  ],
+  "author": "Mike Koss <mike@mckoss.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mckoss/canvas-quiz.git"
+  }
+}

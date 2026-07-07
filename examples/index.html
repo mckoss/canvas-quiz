@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>canvas-quiz — standalone preview</title>
+  <link rel="stylesheet" href="../src/canvas-quiz.css">
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 2rem auto; padding: 0 1rem; max-width: 54rem; }
+    .score { position: sticky; top: 0; background: #fff; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; margin-bottom: 1rem; font-weight: 600; }
+    @media (prefers-color-scheme: dark) { body { background: #1b1f27; color: #e5e9f0; } .score { background: #1b1f27; } }
+  </style>
+</head>
+<body>
+  <div class="score">Score: <span id="score">0</span> pts</div>
+
+  <!-- This page renders explicitly (below) to capture the score via onAnswer.
+       In Canvas you'd instead use auto-init:
+         <div data-canvas-quiz data-src="https://.../module.md"></div>
+       and let the widget wire everything up on load. -->
+  <div id="module"></div>
+
+  <script type="module">
+    import CanvasQuiz from '../src/canvas-quiz.js';
+    let score = 0;
+    const md = await fetch('./module.md').then((r) => r.text());
+    CanvasQuiz.render('#module', md, {
+      onAnswer({ correct, points }) {
+        if (correct) { score += points; document.getElementById('score').textContent = score; }
+      },
+    });
+  </script>
+</body>
+</html>
