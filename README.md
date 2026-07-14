@@ -24,7 +24,7 @@ drop into a Canvas page.
 ```bash
 npm install      # only needed for `npm run serve` (no runtime deps)
 npm test         # run the parser test suite
-npm run serve    # serve ./examples at a local URL, then open it
+npm run serve    # serve repo root; open http://localhost:3000/examples/
 ```
 
 Open `examples/index.html` to see [`examples/module.md`](examples/module.md)

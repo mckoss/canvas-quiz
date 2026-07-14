@@ -1,12 +1,12 @@
 {
   "name": "canvas-quiz",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Author Canvas LMS modules in Markdown — hierarchical expand/collapse, embeds, glossary, and interleaved quizzes that post to Canvas for grading.",
   "type": "module",
   "main": "src/canvas-quiz.js",
   "scripts": {
     "test": "node --test",
-    "serve": "node --version >/dev/null && npx --yes serve examples"
+    "serve": "npx --yes serve . -l 3000"
   },
   "files": [
     "src/canvas-quiz.js",
